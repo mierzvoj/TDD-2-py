@@ -28,13 +28,13 @@ class HammingTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             hamming.distance("ATA", "AGTG")
     #
-    # def test_disallow_left_empty_strand(self):
-    #     with self.assertRaisesWithMessage(ValueError):
-    #         hamming.distance("", "G")
-    #
-    # def test_disallow_right_empty_strand(self):
-    #     with self.assertRaisesWithMessage(ValueError):
-    #         hamming.distance("G", "")
+    def test_disallow_left_empty_strand(self):
+        with self.assertRaisesWithMessage(ValueError):
+            hamming.distance("", "G")
+
+    def test_disallow_right_empty_strand(self):
+        with self.assertRaisesWithMessage(ValueError):
+            hamming.distance("G", "")
 
     # Utility functions
     def setUp(self):
