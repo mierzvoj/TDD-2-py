@@ -20,13 +20,13 @@ class HammingTest(unittest.TestCase):
     def test_long_different_strands(self):
         self.assertEqual(hamming.distance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
     #
-    # def test_disallow_first_strand_longer(self):
-    #     with self.assertRaisesWithMessage(ValueError):
-    #         hamming.distance("AATG", "AAA")
+    def test_disallow_first_strand_longer(self):
+        with self.assertRaisesWithMessage(ValueError):
+            hamming.distance("AATG", "AAA")
     #
-    # def test_disallow_second_strand_longer(self):
-    #     with self.assertRaisesWithMessage(ValueError):
-    #         hamming.distance("ATA", "AGTG")
+    def test_disallow_second_strand_longer(self):
+        with self.assertRaisesWithMessage(ValueError):
+            hamming.distance("ATA", "AGTG")
     #
     # def test_disallow_left_empty_strand(self):
     #     with self.assertRaisesWithMessage(ValueError):

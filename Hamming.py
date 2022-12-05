@@ -1,4 +1,7 @@
 def distance(str1, str2):
+    if len(str1) != len(str2):
+        raise ValueError("string do not match")
+
     i = 0
     counter = 0
     while i < len(str1):
